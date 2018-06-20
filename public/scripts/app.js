@@ -51,6 +51,12 @@ const data = [
   }
 ];
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 function createTweetElement (data){
   var HTMLoutput = 
     `<article class="tweetFeed">
@@ -61,7 +67,7 @@ function createTweetElement (data){
       </header>
 
       <article class="actualTweet">
-        ${data.content.text}
+        ${escape(data.content.text)}
       </article>
 
       <footer>
@@ -76,7 +82,6 @@ function createTweetElement (data){
   return $(HTMLoutput);
 }
 
-
 function renderTweets(tweets) {
   tweets.forEach(function(element){
     $('#tweets-container').append(createTweetElement(element))
@@ -84,8 +89,7 @@ function renderTweets(tweets) {
 }
 
 function tweetButton(){
-  const $form = $('#tweetForm');
-  $form.on('submit', function (event) {
+  $('#tweetForm').on('submit', function (event) {
     event.preventDefault();
     let inputLength = ($('#tweetBox').val().length)
     if (inputLength === 0 || inputLength > 140){
