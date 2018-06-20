@@ -1,0 +1,69 @@
+.tweetFeed{
+	margin: 2rem;
+  border: 0.2rem solid grey;
+  border-radius: 1rem;
+}
+
+.tweetFeed header{
+  background: rgb(225, 225, 225);
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  display: flex;
+}
+
+.tweetFeed header .avatar{
+  width: 2rem;
+  height: 2rem;
+}
+
+.tweetFeed article{
+  padding: 1.5rem 0.5rem;
+  text-align: left;
+  display: flex;
+}
+
+.tweetFeed footer{
+  border-top: 0.1rem solid rgb(225, 225, 225);
+  padding: 0.5rem;
+  display: flex;
+  width: 100%;
+  font-size: 0.5rem;
+}
+
+.tweetFeed footer span{
+  margin-left: auto;
+}
+
+.hoverButtons{
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.tweetFeed .date{
+  margin-right: auto;
+  height: 1rem;
+  margin-left: 0;
+  padding-top: 0.15rem;
+}
+
+.tweetFeed .name{
+  padding: 0 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tweetFeed .handle{
+  margin-left: auto;
+  padding: 0.5rem 0;
+  font-size: 0.6rem;
+  font-weight: 300;
+}
+
+.tweetFeed .hideFeatures {
+  display: none;
+}
+
+.tweetFeed:hover .hideFeatures{
+  display: inline-block;
+}

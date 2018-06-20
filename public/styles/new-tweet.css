@@ -1,0 +1,39 @@
+.new-tweet{
+  margin: 2em;
+  padding: 0.5% 2%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  background: rgb(240, 240, 240);
+}
+
+.new-tweet h2 {
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-weight: 700;
+}
+
+.new-tweet form{
+  margin: 1.5% auto;
+}
+.new-tweet form textarea {
+  width: 100%;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.new-tweet form input {
+  position: relative;
+  right: 10.25em;
+  font-size: .8em;
+}
+
+.new-tweet .counter {
+  position: relative;
+  font-style: italic;
+  left: 10.25em;
+  font-size: .8em; 
+}
+
+.red {
+  color:red;
+}
