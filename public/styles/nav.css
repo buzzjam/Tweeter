@@ -1,23 +1,39 @@
 #nav-bar{
-	height: 80px;
+	height: 4.5rem;
 	overflow: hidden;
 	top: 0;
 	position: fixed;
 	width: 100%;
 	background-color: #00a087;
 	color: #e8fdff;
-	padding: 0px 2em;
+	padding: 0 2rem;
 	z-index: 1;
+	display:flex;
 }
 #nav-bar .logo{
-	width: 80px;
-	height: 80px;
+	width: 4.5rem;
+	height: 4.5rem;
 	float: left;
 }
 
 #nav-bar .header{
-	width: 80px;
-	line-height: 80px;
+	width: 4.5rem;
+	line-height: 4.5rem;
 	text-align: center;
 	float: left;
+}
+
+#nav-bar .compose{
+	padding: 1.5rem 1rem;
+	margin-left:auto;
+}
+
+#composeIMG {
+	width: 1rem;
+	height: 1rem;
+}
+
+.hover{
+	color: white;
+	background: green;
 }

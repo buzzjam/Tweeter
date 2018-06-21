@@ -124,12 +124,20 @@ function loadTweets (){
     });
 }
 
+function toggleCompose(){
+  $('#composeButton').on('click', function () {
+    $(".new-tweet").slideToggle(200, function(){
+      $("#tweetBox").focus();
+    });
+  });
+  $('#composeButton').hover(function(){
+    $(this).toggleClass('hover');
+  })
+}
 
 // Test / driver code (temporary)
 $(document).ready(function() {
-  // console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-  // renderTweets(data);
   tweetButton();
   loadTweets();
+  toggleCompose()
 });
