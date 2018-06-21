@@ -62,7 +62,11 @@ function tweetButton(){
           method: 'GET'
         })
       }).then(function(json){
+<<<<<<< HEAD
         $('#tweetBox').val('');
+=======
+        $('#tweetBox').val("");
+>>>>>>> feature/mongodb
         $(createTweetElement(json[json.length - 1])).insertAfter(".new-tweet");
       });
     }
