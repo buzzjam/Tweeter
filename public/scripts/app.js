@@ -109,6 +109,7 @@ function tweetButton(){
           method: 'GET'
         })
       }).then(function(json){
+        $('#tweetBox').val("");
         $(createTweetElement(json[json.length - 1])).insertAfter(".new-tweet");
       });
     }
