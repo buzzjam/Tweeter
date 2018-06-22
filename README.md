@@ -17,6 +17,7 @@ The compose box can be toggled with the compose button on the top-right of the n
 
 - Express
 - Node 5.10.x or above
+- MongoDB: 3.0.10 or above
 
 ## Final Product
 
