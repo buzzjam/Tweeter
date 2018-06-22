@@ -27,6 +27,7 @@ Compose Box
 !['Compose Box'](https://github.com/buzzjam/Tweeter/blob/master/docs/tweetbox.png)
 
 Mobile View
+
 !["Mobile View"](https://github.com/buzzjam/Tweeter/blob/master/docs/mobileview.png)
 
 
