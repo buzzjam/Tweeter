@@ -22,8 +22,8 @@ The compose box can be toggled with the compose button on the top-right of the n
 
 !["Main App"](https://github.com/buzzjam/Tweeter/blob/master/docs/layout.png)
 
-!["Compose Box"] (https://github.com/buzzjam/Tweeter/blob/master/docs/tweetbox.png)
+!['Compose Box'](https://github.com/buzzjam/Tweeter/blob/master/docs/tweetbox.png)
 
-!["Mobile View"] (https://github.com/buzzjam/Tweeter/blob/master/docs/mobileview.png)
+!["Mobile View"](https://github.com/buzzjam/Tweeter/blob/master/docs/mobileview.png)
 
 
