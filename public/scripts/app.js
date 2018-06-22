@@ -46,12 +46,12 @@ function tweetButton(){
     event.preventDefault();
     let inputLength = ($('#tweetBox').val().length)
     if (inputLength === 0){
-      $('#noInput').show().delay(5000).fadeOut();
+      $('#noInput').show();
       $('#tooLong').hide();
       return;
     } if (inputLength > 140){
 
-        $('#tooLong').show().delay(5000).fadeOut();
+        $('#tooLong').show();
         $('#noInput').hide();
         return;
     } else {
