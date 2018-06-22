@@ -14,12 +14,12 @@ html {
  * Global layout stuff
  */
 main {
-	width: 450px;
+	width: 28rem;
 	text-align: center;
 	background: white;
-	margin: 90px auto 1%;
-  padding: 2px 0px;
-  min-height: 100vh;
+	margin: 5.5rem auto 1rem;
+  padding: 0.125rem 0;
+  min-height: 86vh;
 }
 
 body {
@@ -34,8 +34,7 @@ body {
  */
 
 
- 
-.inputTxtError {
-   border: 0.2rem solid #ff0000;
-   color: #0e0e0e;
+/*changes font to red, such as in the char counter*/
+.red{
+  color:red;
 }

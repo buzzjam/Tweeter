@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 // adding Mongo. db now is tied to Mongo.
 const MongoClient = require("mongodb").MongoClient;
-const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+const MONGODB_URI = "mongodb://localhost:27017/";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
 	if (err) {

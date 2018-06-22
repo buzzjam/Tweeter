@@ -24,7 +24,7 @@ function createTweetElement (data){
       </article>
 
       <footer>
-        <span class="date">${data.created_at}</span>
+        <span class="date">${moment(data.created_at).fromNow()}</span>
         <span class="hideFeatures">
           <input type="image" class = "hoverButtons" name = "flag" src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/web-pict-50.png">
           <input type="image" class = "hoverButtons" name = "retweet"  src="http://simpleicon.com/wp-content/uploads/retweet.png">
@@ -45,16 +45,23 @@ function tweetButton(){
   $('#tweetForm').on('submit', function (event) {
     event.preventDefault();
     let inputLength = ($('#tweetBox').val().length)
-    if (inputLength === 0 || inputLength > 140){
-      return $('#tweetBox').addClass('inputTxtError');
+    if (inputLength === 0){
+      $('#noInput').show().delay(5000).fadeOut();
+      $('#tooLong').hide();
+      return;
+    } if (inputLength > 140){
+
+        $('#tooLong').show().delay(5000).fadeOut();
+        $('#noInput').hide();
+        return;
     } else {
-      $('#tweetBox').removeClass('inputTxtError');
+      $('#noInput').hide();
+      $('#tooLong').hide();
       $.ajax({
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize(),
         error: function() {
-          $('#tweetBox').addClass('inputTxtError')
         }
       }).then(function(){
         return $.ajax({
@@ -63,6 +70,7 @@ function tweetButton(){
         })
       }).then(function(json){
         $('#tweetBox').val('');
+        $('#counter').html("140");
         $(createTweetElement(json[json.length - 1])).insertAfter(".new-tweet");
       });
     }
@@ -84,12 +92,8 @@ function toggleCompose(){
       $("#tweetBox").focus();
     });
   });
-  $('#composeButton').hover(function(){
-    $(this).toggleClass('hover');
-  })
-}
+};
 
-// Test / driver code (temporary)
 $(document).ready(function() {
   tweetButton();
   loadTweets();

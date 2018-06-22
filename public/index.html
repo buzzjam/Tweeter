@@ -27,6 +27,9 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Moment JS Time from Now -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
   </head>
 
   <body>
@@ -48,9 +51,15 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST" id='tweetForm'>
+
           <textarea id = "tweetBox" name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
-          <span class="counter" id = "count">140</span>
+          <span class = "bottomBar">
+            <input type="submit" value="Tweet">
+            <span id = "noInput" class="error" >No input!</span>
+            <span id="tooLong" class="error">Too many characters!</span>
+            <span class="counter" id = "counter">140</span>
+
+          </span>         
         </form>
       </section>
 
