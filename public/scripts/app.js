@@ -45,12 +45,13 @@ function tweetButton(){
   $('#tweetForm').on('submit', function (event) {
     event.preventDefault();
     let inputLength = ($('#tweetBox').val().length)
+    // no input check
     if (inputLength === 0){
       $('#noInput').show();
       $('#tooLong').hide();
       return;
-    } if (inputLength > 140){
-
+    } // char limit check
+    if (inputLength > 140){
         $('#tooLong').show();
         $('#noInput').hide();
         return;
@@ -58,6 +59,7 @@ function tweetButton(){
       $('#noInput').hide();
       $('#tooLong').hide();
       $.ajax({
+        //post tweet to database
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize(),
@@ -69,8 +71,10 @@ function tweetButton(){
           method: 'GET'
         })
       }).then(function(json){
+        // reset counter and input box
         $('#tweetBox').val('');
         $('#counter').html("140");
+        //posts new tweet to feed
         $(createTweetElement(json[json.length - 1])).insertAfter(".new-tweet");
       });
     }
@@ -94,6 +98,7 @@ function toggleCompose(){
   });
 };
 
+// runs the app when everything is ready
 $(document).ready(function() {
   tweetButton();
   loadTweets();
