@@ -3,15 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-function createTweetElement (data){
-  var HTMLoutput = 
+function createTweetElement(data) {
+  var HTMLoutput =
     `<article class="tweetFeed">
       <header>
         <img class="avatar" src=${data.user.avatars.regular}>
@@ -36,25 +35,25 @@ function createTweetElement (data){
 }
 
 function renderTweets(tweets) {
-  tweets.forEach(function(element){
+  tweets.forEach(function(element) {
     $('#tweets-container').prepend(createTweetElement(element))
   })
 }
 
-function tweetButton(){
-  $('#tweetForm').on('submit', function (event) {
+function tweetButton() {
+  $('#tweetForm').on('submit', function(event) {
     event.preventDefault();
     let inputLength = ($('#tweetBox').val().length)
     // no input check
-    if (inputLength === 0){
+    if (inputLength === 0) {
       $('#noInput').show();
       $('#tooLong').hide();
       return;
     } // char limit check
-    if (inputLength > 140){
-        $('#tooLong').show();
-        $('#noInput').hide();
-        return;
+    if (inputLength > 140) {
+      $('#tooLong').show();
+      $('#noInput').hide();
+      return;
     } else {
       $('#noInput').hide();
       $('#tooLong').hide();
@@ -63,14 +62,13 @@ function tweetButton(){
         url: '/tweets',
         method: 'POST',
         data: $(this).serialize(),
-        error: function() {
-        }
-      }).then(function(){
+        error: function() {}
+      }).then(function() {
         return $.ajax({
           url: '/tweets',
           method: 'GET'
         })
-      }).then(function(json){
+      }).then(function(json) {
         // reset counter and input box
         $('#tweetBox').val('');
         $('#counter').html("140");
@@ -81,18 +79,18 @@ function tweetButton(){
   });
 }
 
-function loadTweets (){
-    $.ajax({
-      url: '/tweets',
-      method: 'GET'
-    }).then(function(jsonContent){
-        renderTweets(jsonContent);
-    });
+function loadTweets() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET'
+  }).then(function(jsonContent) {
+    renderTweets(jsonContent);
+  });
 }
 
-function toggleCompose(){
-  $('#composeButton').on('click', function () {
-    $(".new-tweet").slideToggle(200, function(){
+function toggleCompose() {
+  $('#composeButton').on('click', function() {
+    $(".new-tweet").slideToggle(200, function() {
       $("#tweetBox").focus();
     });
   });
